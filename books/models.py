@@ -50,3 +50,15 @@ class Review(models.Model):
 
     class Meta:
         unique_together = ('book', 'user')
+
+
+class Favorite(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='favorites')
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='favorited_by')
+    added_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'book')
+
+    def __str__(self):
+        return f'{self.book.title} favorited by {self.user}'
