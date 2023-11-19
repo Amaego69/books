@@ -16,3 +16,15 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    authors = models.ManyToManyField(Author)
+    genres = models.ManyToManyField(Genre)
+    description = models.TextField(blank=True)
+    publish_date = models.DateField()
+    average_rating = models.FloatField(default=0.0)
+
+    def __str__(self):
+        return self.title
