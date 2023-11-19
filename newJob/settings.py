@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
     'custom_user.apps.CustomUserConfig',
+    'django_filters',
+
     'books',
     'api',
 ]
