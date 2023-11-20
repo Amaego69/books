@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
     'custom_user.apps.CustomUserConfig',
     'django_filters',
+    'drf_yasg',
 
     'books',
     'api',
